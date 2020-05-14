@@ -51,7 +51,23 @@ public class Main {
             System.out.println();
 
             String direction = scanner.nextLine().toUpperCase();
-
+//            ==========================
+//            Version no.1 recognising words in sentences
+            String[] cutDirection = direction.split(" ");
+            for (String i : cutDirection) {
+                if (i.equals("WEST")) {
+                    direction = "W";
+                } else if (i.equals("EAST")) {
+                    direction = "E";
+                } else if (i.equals("NORTH")) {
+                    direction = "N";
+                } else if (i.equals("SOUTH")) {
+                    direction = "S";
+                } else if (i.equals("EXIT") || i.equals("QUIT")) {
+                    direction = "Q";
+                }
+            }
+//            ===========================
             if(exits.containsKey(direction)) {
                 loc = exits.get(direction);
             } else {
@@ -59,5 +75,20 @@ public class Main {
             }
         }
 
+
+
+//        // SPLIT practice
+//        String[] road = "You are standing at the end of a read before a small brick building".split(" ");
+//        for(String i : road) {
+//            System.out.println(i);
+//        }
+//
+//        System.out.println("==========");
+//
+//        String[] building = "You are inside a building, a well house for a small spring".split(", ");
+//        for(String i : building) {
+//            System.out.println(i);
+//        }
+//        //END of SPLIT
     }
 }
